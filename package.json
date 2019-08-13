@@ -1,0 +1,64 @@
+{
+  "name": "scala-electron-wallet",
+  "version": "1.2.2",
+  "description": "Modern GUI interface for Scala Currency",
+  "productName": "Scala Electron Wallet",
+  "cordovaId": "com.scalanetwork.wallet",
+  "author": "Scala",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev -m electron -t mat",
+    "build": "quasar build -m electron -t mat",
+    "lint": "eslint --ext .js,.vue src",
+    "lint-fix": "eslint --fix .",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "electron-is-dev": "^1.1.0",
+    "electron-window-state": "^5.0.3",
+    "flag-icon-css": "^3.3.0",
+    "fs-extra": "^7.0.1",
+    "object-assign-deep": "^0.4.0",
+    "portscanner": "^2.2.0",
+    "promise-queue": "^2.2.5",
+    "qrcode.vue": "^1.6.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "vue-i18n": "^8.13.0",
+    "vue-timeago": "^5.1.2",
+    "vuelidate": "^0.7.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "devtron": "^1.4.0",
+    "electron": "^4.2.9",
+    "electron-builder": "^20.44.4",
+    "electron-debug": "^2.2.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-packager": "^13.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "node-sass": "^4.12.0",
+    "quasar-cli": "^0.17.26",
+    "sass-loader": "^7.2.0",
+    "strip-ansi": "^3.0.1"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}
