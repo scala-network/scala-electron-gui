@@ -1,5 +1,7 @@
 # Scala Electron GUI Wallet
 
+![Screenshot](https://i.imgur.com/Z4pHcA7.jpg "Screenshot")
+
 ### Introduction
 Scala is a private cryptocurrency based on Monero. Scala aims to provide everyone the ability to mine and transact with ease and security.
 More information on the project can be found on the [website](https://scalaproject.io).
@@ -16,7 +18,7 @@ Please submit any changes as pull requests to the development branch, all change
 ```
 nvm use 11.9.0
 npm install -g quasar-cli
-git clone https://github.com/scala-network/scala-electron-wallet
+https://github.com/scala-network/scala-electron-gui/
 cd scala-electron-wallet
 cp path_to_scala_binaries/scalad bin/
 cp path_to_scala_binaries/scala-wallet-rpc bin/
