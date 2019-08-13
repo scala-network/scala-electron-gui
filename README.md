@@ -1,5 +1,7 @@
 # Scala Electron GUI Wallet
 
+![Screenshot](https://i.imgur.com/Z4pHcA7.jpg "Screenshot")
+
 ### Introduction
 Scala is a private cryptocurrency based on Monero. Scala aims to provide everyone the ability to mine and transact with ease and security.
 More information on the project can be found on the [website](https://scalaproject.io).
