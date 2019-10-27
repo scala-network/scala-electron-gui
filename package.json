@@ -1,6 +1,6 @@
 {
   "name": "scala-electron-wallet",
-  "version": "1.2.2",
+  "version": "1.4.0",
   "description": "Modern GUI interface for Scala Currency",
   "productName": "Scala Electron Wallet",
   "cordovaId": "com.scalanetwork.wallet",
