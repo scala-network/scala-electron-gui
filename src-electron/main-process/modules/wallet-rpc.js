@@ -1685,6 +1685,12 @@ export class WalletRPC {
     }
 
     quit () {
+	//Simple way to gracefully stop IPFS on exit
+	http.get('http://localhost:5001/api/v0/shutdown', (resp) => {
+	}).on("error", (err) => {
+  	console.log("Error: " + err.message);
+	})
+
         return new Promise((resolve, reject) => {
             if (this.walletRPCProcess) {
                 this.closeWallet().then(() => {
