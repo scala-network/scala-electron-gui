@@ -108,12 +108,8 @@ export class Backend {
                 port: "20189"
             },
             {
-                host: "daemons.cryptopool.space",
+                host: "xlanode.com",
                 port: "20189"
-            },
-            {
-                host: "nodes.hashvault.pro",
-                port: "22023"
             }
         ]
 
