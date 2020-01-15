@@ -202,7 +202,7 @@ module.exports = function (ctx) {
                 },
 
                 dmg: {
-                    background: "src-electron/build/scala-dmg.tiff"
+                    background: "src-electron/build/scala-dmg.tiff",
                     sign: false
                 },
 
