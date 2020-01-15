@@ -3,7 +3,7 @@ const request = require("request-promise")
 const queue = require("promise-queue")
 const http = require("http")
 const fs = require("fs")
-const path = require("path")
+const path = require("upath")
 const portscanner = require("portscanner")
 
 export class Daemon {
@@ -55,7 +55,8 @@ export class Daemon {
         return this.sendRPC("get_info", {}, {
             protocol: "http://",
             hostname: daemon.remote_host,
-            port: daemon.remote_port
+            port: daemon.remote_port,
+            timeout: 20000
         }).then(data => {
             if (data.error) return { error: data.error }
             return {
@@ -76,7 +77,8 @@ export class Daemon {
             this.port = daemon.remote_port
 
             return new Promise((resolve, reject) => {
-                this.sendRPC("get_info").then((data) => {
+                // Set a 20 second timeout on get_info incase the node is unresponsive
+                this.sendRPC("get_info", {}, { timeout: 20000 }).then((data) => {
                     if (!data.hasOwnProperty("error")) {
                         this.startHeartbeat()
                         resolve()
@@ -158,6 +160,7 @@ export class Daemon {
                     })
 
                     // To let caller know when the daemon is ready
+                    // We can't apply timeout to this because the local daemon might be syncing in the background
                     let intrvl = setInterval(() => {
                         this.sendRPC("get_info").then((data) => {
                             if (!data.hasOwnProperty("error")) {
@@ -415,6 +418,11 @@ export class Daemon {
         }
         if (Object.keys(params).length !== 0) {
             requestOptions.json.params = params
+        }
+
+        // If there's a timeout then set it
+        if (options.timeout) {
+            requestOptions.timeout = options.timeout
         }
 
         return this.queue.add(() => {

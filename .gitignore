@@ -25,3 +25,5 @@ yarn-error.log*
 # bin dir
 bin/*
 !bin/.gitkeep
+
+.env

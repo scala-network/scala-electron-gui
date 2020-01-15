@@ -6,7 +6,7 @@ import { dialog } from "electron"
 const WebSocket = require("ws")
 const os = require("os")
 const fs = require("fs-extra")
-const path = require("path")
+const path = require("upath")
 const objectAssignDeep = require("object-assign-deep")
 
 export class Backend {
