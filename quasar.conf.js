@@ -184,24 +184,37 @@ module.exports = function (ctx) {
                 // },
 
                 linux: {
-                    target: ["AppImage", "snap", "tar.xz"],
+                    target: ["AppImage"],
                     icon: "src-electron/icons/icon_512x512.png",
                     category: "Finance"
                 },
 
                 mac: {
+                    // Zip seems to corrupt the app after unzipping. Ref: https://github.com/electron-userland/electron-builder/issues/3534
+                    target: ["7z"],
                     icon: "src-electron/icons/icon.icns",
-                    category: "public.app-category.finance"
+                    category: "public.app-category.finance",
+                    // Notarizing: https://kilianvalkhof.com/2019/electron/notarizing-your-electron-application/
+                    hardenedRuntime: true,
+                    gatekeeperAssess: false,
+                    entitlements: "build/entitlements.mac.plist",
+                    entitlementsInherit: "build/entitlements.mac.plist"
                 },
 
                 dmg: {
-                    background: "src-electron/build/scala-dmg.tiff"
+                    background: "src-electron/build/scala-dmg.tiff",
+                    sign: false
                 },
 
                 nsis: {
                     oneClick: false,
                     allowToChangeInstallationDirectory: true
                 },
+
+                files: [
+                    "!build/notarize.js",
+                    "!.env"
+                ],
 
                 extraResources: [
                     "bin"

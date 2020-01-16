@@ -5,16 +5,17 @@ import menuTemplate from "./menu"
 import isDev from "electron-is-dev"
 const portscanner = require("portscanner")
 const windowStateKeeper = require("electron-window-state")
+const path = require("upath")
 
 /**
  * Set `__statics` path to static files in production;
  * The reason we are setting it here is that the path needs to be evaluated at runtime
  */
 if (process.env.PROD) {
-    global.__statics = require("path").join(__dirname, "statics").replace(/\\/g, "\\\\")
-    global.__ryo_bin = require("path").join(__dirname, "..", "bin").replace(/\\/g, "\\\\")
+    global.__statics = path.join(__dirname, "statics").replace(/\\/g, "\\\\")
+    global.__ryo_bin = path.join(__dirname, "..", "bin").replace(/\\/g, "\\\\")
 } else {
-    global.__ryo_bin = require("path").join(process.cwd(), "bin").replace(/\\/g, "\\\\")
+    global.__ryo_bin = path.join(process.cwd(), "bin").replace(/\\/g, "\\\\")
 }
 
 let mainWindow, backend
@@ -52,8 +53,8 @@ function createWindow () {
         y: mainWindowState.y,
         width: mainWindowState.width,
         height: mainWindowState.height,
-        minWidth: 1154,
-        minHeight: 878,
+        minWidth: 640,
+        minHeight: 480,
         icon: require("path").join(__statics, "icon_512x512.png"),
         title
     })
