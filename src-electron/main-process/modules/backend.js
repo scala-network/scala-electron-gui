@@ -238,7 +238,7 @@ export class Backend {
             }
 
             if (path) {
-                const baseUrl = net_type === "testnet" ? "https://scalatestnet.com" : "https://scalablocks.com"
+                const baseUrl = net_type === "testnet" ? "https://testnet.scalaproject.io" : "https://explorer.scalaproject.io"
                 const url = `${baseUrl}/${path}/`
                 require("electron").shell.openExternal(url + params.id)
             }
