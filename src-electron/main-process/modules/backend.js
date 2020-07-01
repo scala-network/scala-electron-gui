@@ -45,11 +45,11 @@ export class Backend {
         const daemon = {
             type: "remote",
             p2p_bind_ip: "0.0.0.0",
-            p2p_bind_port: 20188,
+            p2p_bind_port: 11811,
             rpc_bind_ip: "127.0.0.1",
-            rpc_bind_port: 20189,
+            rpc_bind_port: 11812,
             zmq_rpc_bind_ip: "127.0.0.1",
-            zmq_rpc_bind_port: 20190,
+            zmq_rpc_bind_port: 11813,
             out_peers: -1,
             in_peers: -1,
             limit_rate_up: -1,
@@ -110,6 +110,10 @@ export class Backend {
             {
                 host: "xlanode.com",
                 port: "20189"
+            },
+            {
+                host: "164.68.117.160",
+                port: "11812"
             }
         ]
 
