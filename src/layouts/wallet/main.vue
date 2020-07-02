@@ -24,7 +24,7 @@
                 </router-link>
                 <router-link to="/wallet/send">
                     <q-btn
-                        class="large-btn"
+                        class="large-btn-send"
                         :label="$t('buttons.send')"
                         size="md"
                         icon-right="arrow_right_alt"
@@ -33,7 +33,7 @@
                 </router-link>
                 <router-link to="/wallet/receive">
                     <q-btn
-                        class="large-btn"
+                        class="large-btn-rec"
                         :label="$t('buttons.receive')"
                         size="md"
                         icon-right="save_alt"
@@ -130,6 +130,24 @@ export default {
             margin-left: auto;
             padding-left: 8px;
         }
+    }
+    .large-btn-send {
+        min-width: 160px;
+        .q-btn-inner > *:last-child {
+            margin-left: auto;
+            padding-left: 8px;
+        }
+        background: #e8efff;
+        color: #16171a;
+    }
+    .large-btn-rec {
+        min-width: 160px;
+        .q-btn-inner > *:last-child {
+            margin-left: auto;
+            padding-left: 8px;
+        }
+        background: #408066;
+        color: black;
 
     }
 }

@@ -7,10 +7,10 @@
 }
 
 ::selection {
-    background: #1b1e24;
+    background: #6190ff;
 }
 ::-moz-selection {
-    background: #2f333d;
+    background: #6190ff;
 }
 
 * {
@@ -94,7 +94,7 @@ footer,
 }
 
 .q-layout-header {
-    background: #1b1e24;
+    background: #0A0A0A;
     box-shadow: none;
     border-bottom: 1px solid #333;
     height: 48px;
@@ -242,7 +242,7 @@ footer,
             }
 
             .ready {
-              color: #408066;
+              color: $scala-green-solid;
             }
 
             .scanning, .syncing {
@@ -267,11 +267,11 @@ footer,
         }
 
         div:first-child {
-            background-color: #408066;
+            background-color: $scala-green-dark-solid;
         }
 
         div:last-child {
-            background-color: #78c2a4;
+            background-color: $scala-green-solid;
         }
     }
 
@@ -345,20 +345,20 @@ footer,
 }
 
 .q-popover {
-    background: #16171a;
+    background: #222;
     color:#cecece;
 
     .q-list-separator > .q-item-division + .q-item-division, .q-item-division + .q-item-separator {
-        border-top: 1px solid #16171a;
+        border-top: 1px solid #333;
     }
 }
 
 .header-popover.q-popover {
-    background: #16171a;
+    background: $primary;
     color: white;
 
     .q-list-separator > .q-item-division + .q-item-division, .q-item-division + .q-item-separator {
-        border-top: 1px solid #16171a;
+        border-top: 1px solid $scala-green-dark-solid;
     }
 }
 
@@ -419,7 +419,7 @@ footer,
     }
 
     .router-link-exact-active > .q-btn {
-        background: #2f333d;
+        background: $scala-green;
     }
 
 }
@@ -429,22 +429,22 @@ footer,
     }
 
     .q-item {
-        background: #16171a;
+        background: $secondary;
         .wallet-icon {
-            color: #e8efff;
+            color: $tertiary;
             g,path {
-                fill: #e8efff;
+                fill: $tertiary;
             }
         }
     }
 
     .q-item:hover, .q-item.selected {
-        background: #2f333d !important;
+        background: $primary !important;
 
         .wallet-icon {
-            color:#e8efff;
+            color:$scala-green-solid;
             g,path {
-                fill: #e8efff;
+                fill: $scala-green-solid;
             }
         }
 
@@ -491,7 +491,7 @@ footer,
 
 .scala-list {
     .scala-list-item {
-        background: #16171a;
+        background: #313131;
         -webkit-transition: background-color 0.2s ease-in;
         transition: background-color 0.2s ease-in;
 
@@ -541,7 +541,7 @@ footer,
 
 .scala-field {
     .content {
-        border: 1px solid #2f333d;
+        border: 1px solid #484848;
 
         -webkit-transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
         transition: background-color 0.2s ease-in, border-color 0.2s ease-in;

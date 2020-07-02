@@ -58,6 +58,8 @@ function createWindow () {
         icon: require("path").join(__statics, "icon_512x512.png"),
         title
     })
+    
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on("close", (e) => {
         if (process.platform === "darwin") {

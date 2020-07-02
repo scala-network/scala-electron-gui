@@ -72,7 +72,7 @@ export default {
 
     .wallet-content {
         text-align: center;
-        background-color: #0A0A0A;
+        background-color: #16171a;
         padding: 2em;
 
         .balance {
