@@ -59,8 +59,6 @@ function createWindow () {
         title
     })
     
-    mainWindow.webContents.openDevTools();
-
     mainWindow.on("close", (e) => {
         if (process.platform === "darwin") {
             if (forceQuit) {
