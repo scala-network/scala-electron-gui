@@ -61,7 +61,7 @@ export class Backend {
             mainnet: {
                 ...daemon,
                 remote_host: "scalanode.com",
-                remote_port: 20189
+                remote_port: 11812
             },
             stagenet: {
                 ...daemon,
@@ -105,14 +105,18 @@ export class Backend {
         this.remotes = [
             {
                 host: "scalanode.com",
-                port: "20189"
+                port: "11812"
+            },
+            {
+                host: "207.180.224.106",
+                port: "11812"
+            },
+            {
+                host: "164.68.115.234",
+                port: "11812"
             },
             {
                 host: "xlanode.com",
-                port: "20189"
-            },
-            {
-                host: "164.68.117.160",
                 port: "11812"
             }
         ]
