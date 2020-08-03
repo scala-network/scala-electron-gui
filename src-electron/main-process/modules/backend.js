@@ -104,6 +104,10 @@ export class Backend {
 
         this.remotes = [
             {
+                host: "mine.scalaproject.io",
+                port: "8000"
+            },	
+            {
                 host: "164.68.115.234",
                 port: "11812"
             },
@@ -119,10 +123,7 @@ export class Backend {
                 host: "daemon.pool.gntl.co.uk",
                 port: "11812"
             },
-            {
-                host: "mine.scalaproject.io",
-                port: "8000"
-            },			
+	
             {
                 host: "xlanode.com",
                 port: "20189"
