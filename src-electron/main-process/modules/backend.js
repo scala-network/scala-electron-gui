@@ -116,14 +116,13 @@ export class Backend {
                 port: "20189"
             },
             {
-                host: "207.180.224.106",
-                port: "11111"
+                host: "scala.ethospool.org",
+                port: "11812"
             },
             {
                 host: "daemon.pool.gntl.co.uk",
                 port: "11812"
             },
-	
             {
                 host: "xlanode.com",
                 port: "20189"
