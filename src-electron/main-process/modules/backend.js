@@ -120,7 +120,7 @@ export class Backend {
                 port: "11812"
             },
             {
-                host: "pool.scalaproject.io",
+                host: "mine.scalaproject.io",
                 port: "8000"
             },			
             {
