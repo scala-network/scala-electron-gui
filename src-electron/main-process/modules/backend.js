@@ -60,7 +60,7 @@ export class Backend {
         const daemons = {
             mainnet: {
                 ...daemon,
-                remote_host: "scalanode.com",
+                remote_host: "164.68.115.234",
                 remote_port: 11812
             },
             stagenet: {
@@ -104,20 +104,28 @@ export class Backend {
 
         this.remotes = [
             {
-                host: "scalanode.com",
-                port: "11812"
-            },
-            {
-                host: "207.180.224.106",
-                port: "11812"
-            },
-            {
                 host: "164.68.115.234",
                 port: "11812"
             },
             {
-                host: "xlanode.com",
+                host: "scalanode.com",
+                port: "20189"
+            },
+            {
+                host: "207.180.224.106",
+                port: "11111"
+            },
+            {
+                host: "daemon.pool.gntl.co.uk",
                 port: "11812"
+            },
+            {
+                host: "pool.scalaproject.io",
+                port: "8000"
+            },			
+            {
+                host: "xlanode.com",
+                port: "20189"
             }
         ]
 
