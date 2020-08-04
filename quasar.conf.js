@@ -191,7 +191,7 @@ module.exports = function (ctx) {
 
                 mac: {
                     // Zip seems to corrupt the app after unzipping. Ref: https://github.com/electron-userland/electron-builder/issues/3534
-                    target: ["7z"],
+                    target: ["dmg", "7z"],
                     icon: "src-electron/icons/icon.icns",
                     category: "public.app-category.finance",
                     // Notarizing: https://kilianvalkhof.com/2019/electron/notarizing-your-electron-application/
