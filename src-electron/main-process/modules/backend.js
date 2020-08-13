@@ -248,14 +248,14 @@ export class Backend {
 
             let path = null
             if (params.type === "tx") {
-                path = "tx"
+                path = "tx?tx_hash="
             } else if (params.type === "service_node") {
                 path = "service_node"
             }
 
             if (path) {
-                const baseUrl = net_type === "testnet" ? "https://scalatestnet.com" : "https://scalablocks.com"
-                const url = `${baseUrl}/${path}/`
+                const baseUrl = net_type === "testnet" ? "https://scalatestnet.com" : "https://explorer.scalaproject.io"
+                const url = `${baseUrl}/${path}`
                 require("electron").shell.openExternal(url + params.id)
             }
             break
