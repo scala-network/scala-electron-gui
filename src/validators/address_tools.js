@@ -1950,7 +1950,7 @@ var scalaConfig = {
     coinSymbol: 'XLA',
     coinName: 'Scala',
     coinUriPrefix: 'xla:',
-    addressPrefix: 0x2419,
+    addressPrefix: 0x9B,
 };
 
 var cnUtilGen = function(initConfig) {
