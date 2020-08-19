@@ -25,21 +25,20 @@
 
         <div class="row items-end q-mt-md">
             <div class="col">
-                <ScalaField v-if="wallet.refresh_type=='height'" :label="$t('fieldLabels.restoreFromBlockHeight')" :error="$v.wallet.refresh_start_height.$error">
+                <ScalaField v-if="wallet.refresh_type=='date'" :label="$t('fieldLabels.restoreFromDate')">
+                    <q-datetime v-model="wallet.refresh_start_date" type="date"
+                                modal :min="1596258914000" :max="Date.now()"
+                                :dark="theme=='dark'"
+                                hide-underline
+                                />
+                </ScalaField>
+                <ScalaField v-else-if="wallet.refresh_type=='height'" :label="$t('fieldLabels.restoreFromBlockHeight')" :error="$v.wallet.refresh_start_height.$error">
                     <q-input v-model="wallet.refresh_start_height" type="number"
                                 min="0"
                                 @blur="$v.wallet.refresh_start_height.$touch"
                                 :dark="theme=='dark'"
                                 hide-underline
                                 />
-                </ScalaField>
-                <ScalaField v-else-if="wallet.refresh_type=='date'" :label="$t('fieldLabels.restoreFromDate')">
-					<q-datetime v-model="wallet.refresh_start_date" type="date"
-                                modal :min="1596243600000" :max="Date.now()"
-                                :dark="theme=='dark'"
-                                hide-underline
-                                />
-								
                 </ScalaField>
             </div>
             <div class="col-auto q-ml-sm">
@@ -107,7 +106,7 @@ export default {
                 seed: "",
                 refresh_type: "height",
                 refresh_start_height: 0,
-                refresh_start_date: 1596243600000, // timestamp of block 1
+                refresh_start_date: 1596258914000, // timestamp of block 1
                 password: "",
                 password_confirm: ""
             },
