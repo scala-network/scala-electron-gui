@@ -67,17 +67,9 @@
     "sass-loader": "^7.1.0",
     "strip-ansi": "^3.0.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.+(js|jsx|vue)": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.+(json|yml|yaml|css|md)": "prettier --write"
+    "*.+(js|jsx|vue)": []
+    "*.+(json|yml|yaml|css|md)": ""
   },
   "engines": {
     "node": ">= 8.9.0",
