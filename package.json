@@ -68,7 +68,7 @@
     "strip-ansi": "^3.0.1"
   },
   "lint-staged": {
-    "*.+(js|jsx|vue)": []
+    "*.+(js|jsx|vue)": [],
     "*.+(json|yml|yaml|css|md)": ""
   },
   "engines": {

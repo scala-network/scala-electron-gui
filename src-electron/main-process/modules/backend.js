@@ -242,14 +242,14 @@ export class Backend {
 
         let path = null;
         if (params.type === "tx") {
-          path = "tx";this.PIVOT_BLOCK_HEIGHT
+          path = "tx?tx_hash=";this.PIVOT_BLOCK_HEIGHT
         } else if (params.type === "service_node") {
           path = "service_node";
         }
 
         if (path) {
           const baseUrl = net_type === "testnet" ? "" : "https://explorer.scalaproject.io";
-          const url = `${baseUrl}/${path}/`;
+          const url = `${baseUrl}/${path}`;
           require("electron").shell.openExternal(url + params.id);
         }
         break;
