@@ -1,14 +1,14 @@
-import Vue from "vue"
-import Vuex from "vuex"
+import Vue from "vue";
+import Vuex from "vuex";
 
-import gateway from "./gateway"
+import gateway from "./gateway";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    modules: {
-        gateway
-    }
-})
+  modules: {
+    gateway
+  }
+});
 
-export default store
+export default store;

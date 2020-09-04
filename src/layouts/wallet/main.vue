@@ -1,137 +1,116 @@
 <template>
-<q-layout view="hHh Lpr lFf">
-    <q-layout-header class="shift-title">
-        <main-menu />
-        <q-toolbar-title>
-            <div class="flex items-center justify-center" style="margin-top:7px">
-                <img src="statics/scala.svg" height="32">
-            </div>
-        </q-toolbar-title>
-    </q-layout-header>
+  <q-layout view="hHh Lpr lFf">
+    <q-header class="shift-title">
+      <MainMenu />
+      <q-toolbar-title>
+        <div class="flex items-center justify-center" style="margin-top:7px">
+          <img src="scala.svg" height="32" />
+        </div>
+      </q-toolbar-title>
+    </q-header>
 
     <q-page-container>
-        <!-- <AddressHeader :address="info.address" :title="info.name" /> -->
-        <WalletDetails />
+      <!-- <AddressHeader :address="info.address" :title="info.name" /> -->
+      <WalletDetails />
 
-        <div class="app-content">
-            <div class="navigation row items-end">
-                <router-link to="/wallet">
-                    <q-btn
-                        class="single-icon"
-                        size="md"
-                        icon="swap_horiz"
-                    />
-                </router-link>
-                <router-link to="/wallet/send">
-                    <q-btn
-                        class="large-btn-send"
-                        :label="$t('buttons.send')"
-                        size="md"
-                        icon-right="arrow_right_alt"
-                        align="left"
-                    />
-                </router-link>
-                <router-link to="/wallet/receive">
-                    <q-btn
-                        class="large-btn-rec"
-                        :label="$t('buttons.receive')"
-                        size="md"
-                        icon-right="save_alt"
-                        align="left"
-                    />
-                </router-link>
-
-                </router-link>
-                <router-link to="/wallet/advanced">
-                    <q-btn
-                        class="large-btn"
-                        :label="$t('buttons.advanced')"
-                        size="md"
-                        icon-right="tune"
-                        align="left"
-                    />
-                </router-link>
-                <router-link to="/wallet/addressbook" class="address">
-                    <q-btn
-                        class="single-icon"
-                        size="md"
-                        icon="person"
-                    />
-                </router-link>
-
-            </div>
-            <div class="hr-separator" />
-            <keep-alive>
-                <router-view />
-            </keep-alive>
+      <div class="app-content">
+        <div class="navigation row items-end">
+          <router-link to="/wallet">
+            <q-btn class="single-icon" size="md" icon="swap_horiz" />
+          </router-link>
+          <router-link to="/wallet/send">
+            <q-btn
+              class="large-btn-send"
+              :label="$t('buttons.send')"
+              size="md"
+              icon-right="arrow_right_alt"
+              align="between"
+            />
+          </router-link>
+          <router-link to="/wallet/receive">
+            <q-btn class="large-btn-rec" :label="$t('buttons.receive')" size="md" icon-right="save_alt" align="between" />
+          </router-link>
+          <router-link to="/wallet/advanced">
+            <q-btn class="large-btn" :label="$t('buttons.advanced')" size="md" icon-right="tune" align="between" />
+          </router-link>
+          <router-link to="/wallet/addressbook" class="address">
+            <q-btn class="single-icon" size="md" icon="person" />
+          </router-link>
         </div>
+        <div class="hr-separator" />
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </div>
     </q-page-container>
 
-    <status-footer />
-
-</q-layout>
+    <StatusFooter />
+  </q-layout>
 </template>
 
 <script>
-const { clipboard } = require("electron")
-import { openURL } from "quasar"
-import { mapState } from "vuex"
-import WalletDetails from "components/wallet_details"
-import FormatScala from "components/format_scala"
-import StatusFooter from "components/footer"
-import MainMenu from "components/mainmenu"
+import { openURL } from "quasar";
+import { mapState } from "vuex";
+import WalletDetails from "components/wallet_details";
+import StatusFooter from "components/footer";
+import MainMenu from "components/mainmenu";
 export default {
-    name: "LayoutDefault",
-    computed: mapState({
-        theme: state => state.gateway.app.config.appearance.theme,
-        info: state => state.gateway.wallet.info,
-    }),
-    data() {
-        return {
-            selectedTab: "tab-1",
-        }
-    },
-    methods: {
-        openURL,
-    },
-    components: {
-        StatusFooter,
-        MainMenu,
-        WalletDetails
-    }
-}
+  name: "LayoutDefault",
+  components: {
+    StatusFooter,
+    MainMenu,
+    WalletDetails
+  },
+  data() {
+    return {
+      selectedTab: "tab-1"
+    };
+  },
+  computed: mapState({
+    theme: state => state.gateway.app.config.appearance.theme,
+    info: state => state.gateway.wallet.info
+  }),
+  methods: {
+    openURL
+  }
+};
 </script>
 
 <style lang="scss">
 .navigation {
-    padding: 8px 12px;
+  padding: 8px 12px;
 
-    > * {
-        margin: 2px 0;
-        margin-right: 12px;
-    }
+  > * {
+    margin: 2px 0;
+    margin-right: 12px;
+  }
 
-    > *:last-child {
-        margin-right: 0px;
-    }
+  > *:last-child {
+    margin-right: 0px;
+  }
 
-    .address {
-        margin-left: auto;
-    }
+  .address {
+    margin-left: auto;
+  }
 
-    .single-icon {
-        width: 38px;
-        padding: 0;
-    }
+  .single-icon {
+    width: 38px;
+    padding: 0;
+  }
 
-    .large-btn {
-        min-width: 160px;
-        .q-btn-inner > *:last-child {
-            margin-left: auto;
-            padding-left: 8px;
-        }
+  a {
+    text-decoration: none;
+  }
+
+  .large-btn {
+    min-width: 160px;
+    .q-btn-inner > *:last-child {
+      margin-left: auto;
+      padding-left: 16px;
     }
-    .large-btn-send {
+  }
+  
+  .large-btn-send {
         min-width: 160px;
         .q-btn-inner > *:last-child {
             margin-left: auto;
@@ -140,7 +119,8 @@ export default {
         background: #e8efff;
         color: #16171a;
     }
-    .large-btn-rec {
+  
+  .large-btn-rec {
         min-width: 160px;
         .q-btn-inner > *:last-child {
             margin-left: auto;
@@ -148,8 +128,6 @@ export default {
         }
         background: #408066;
         color: black;
-
     }
 }
-
 </style>
