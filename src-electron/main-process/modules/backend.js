@@ -43,13 +43,15 @@ export class Backend {
         this.config_file = path.join(this.config_dir, "gui", "config.json")
 
         const daemon = {
-            type: "remote",
-            p2p_bind_ip: "0.0.0.0",
+			type: "local_remote",
+			p2p_bind_ip: "0.0.0.0",
             p2p_bind_port: 11811,
             rpc_bind_ip: "127.0.0.1",
             rpc_bind_port: 11812,
             zmq_rpc_bind_ip: "127.0.0.1",
             zmq_rpc_bind_port: 11813,
+            remote_host: "164.68.115.234",
+            remote_port: 11812,		
             out_peers: -1,
             in_peers: -1,
             limit_rate_up: -1,
@@ -60,6 +62,10 @@ export class Backend {
         const daemons = {
             mainnet: {
                 ...daemon,
+				type: "local_remote",
+				p2p_bind_port: 11811,
+				rpc_bind_port: 11812,
+				zmq_rpc_bind_port: 11813,
                 remote_host: "164.68.115.234",
                 remote_port: 11812
             },
