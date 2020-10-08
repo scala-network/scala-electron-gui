@@ -1,33 +1,27 @@
 <template>
-<div id="q-app">
+  <div id="q-app">
     <router-view />
-</div>
+  </div>
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState } from "vuex";
 export default {
-    name: "App",
-    computed: mapState({
-        theme: state => state.gateway.app.config.appearance.theme,
-    }),
-    watch: {
-        theme: function () {
-            if(this.theme == "dark")
-                document.body.classList.add("dark")
-            else
-                document.body.classList.remove("dark")
-        }
-    },
-    mounted () {
-        if(this.theme == "dark")
-            document.body.classList.add("dark")
-        else
-            document.body.classList.remove("dark")
-
+  name: "App",
+  computed: mapState({
+    theme: state => state.gateway.app.config.appearance.theme
+  }),
+  watch: {
+    theme: function() {
+      if (this.theme == "dark") document.body.classList.add("dark");
+      else document.body.classList.remove("dark");
     }
-}
+  },
+  mounted() {
+    if (this.theme == "dark") document.body.classList.add("dark");
+    else document.body.classList.remove("dark");
+  }
+};
 </script>
 
-<style>
-</style>
+<style></style>

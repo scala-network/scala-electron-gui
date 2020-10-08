@@ -9,13 +9,10 @@
 <script>
 export default {
   // name: 'LayoutName',
-  data () {
-    return {
-
-    }
+  data() {
+    return {};
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

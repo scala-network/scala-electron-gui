@@ -1949,7 +1949,7 @@ var scalaConfig = {
     coinUnitPlaces: 2,
     coinSymbol: 'XLA',
     coinName: 'Scala',
-    coinUriPrefix: 'xla:',
+    coinUriPrefix: 'scala:',
     addressPrefix: 0x9B,
 };
 
