@@ -115,6 +115,12 @@ export default {
     }
   },
   methods: {
+    createWallet() {
+      this.$q.loading.show({
+        delay: 0
+      });
+      this.$gateway.send("wallet", "create_wallet", this.wallet);
+    },
     create() {
       this.$v.wallet.$touch();
 
@@ -136,10 +142,8 @@ export default {
       }
 
       // Warn user if no password is set
-      let passwordPromise = Promise.resolve();
       if (!this.wallet.password) {
-        // TODO: Password box de-duplicate across components
-        passwordPromise = this.$q.dialog({
+        const passwordPromise = this.$q.dialog({
           title: this.$t("dialog.noPassword.title"),
           message: this.$t("dialog.noPassword.message"),
           ok: {
@@ -153,17 +157,15 @@ export default {
           dark: this.theme == "dark",
           color: "positive"
         });
+        passwordPromise
+          .onOk(() => {
+            this.createWallet();
+          })
+          .onDismiss(() => {})
+          .onCancel(() => {});
+      } else {
+        this.createWallet();
       }
-
-      passwordPromise
-        .onOk(() => {
-          this.$q.loading.show({
-            delay: 0
-          });
-          this.$gateway.send("wallet", "create_wallet", this.wallet);
-        })
-        .onDismiss(() => {})
-        .onCancel(() => {});
     },
     cancel() {
       this.$router.replace({ path: "/wallet-select" });
@@ -172,12 +174,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.create-wallet {
-  // .fields {
-  //   > * {
-  //     margin-bottom: 16px;
-  //   }
-  // }
-}
-</style>
+<style lang="scss"></style>
