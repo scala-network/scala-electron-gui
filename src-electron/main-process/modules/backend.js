@@ -242,7 +242,7 @@ export class Backend {
 
         let path = null;
         if (params.type === "tx") {
-          path = "tx?tx_hash=";this.PIVOT_BLOCK_HEIGHT
+          path = "tx?tx_info=";
         } else if (params.type === "service_node") {
           path = "service_node";
         }
