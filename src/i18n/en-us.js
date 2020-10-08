@@ -148,9 +148,7 @@ export default {
       title: "Switch wallet",
       closeMessage: "Are you sure you want to close the current wallet?",
       restartMessage:
-        "The wallet RPC is currently syncing. \nIf you wish to switch wallets then you must restart the application. \nYou will lose your syncing progress and have to rescan the blockchain again.",
-      restartWalletMessage:
-        "If you wish to switch wallets then you must restart the application. Are you sure you want to close the current wallet and restart?"
+        "The wallet RPC is currently syncing. \nIf you wish to switch wallets then you must restart the application. \nYou will lose your syncing progress and have to rescan the blockchain again."
     },
     transactionDetails: {
       title: "Transaction details",

@@ -101,13 +101,9 @@ export default {
         return;
       }
 
-      // TODO: Remove this in hardfork 16
-      // This is a temporary work around for the issue where wallet rpc hangs after closing a wallet due to long polling still being active
-      this.$gateway.confirmClose(this.$t("dialog.switchWallet.restartWalletMessage"), true);
-
       // Allow switching normally because rpc won't be blocked
       // NB: If this is added back, must use the quasar v1 APIs
-      /*
+      
       this.$q
         .dialog({
           title: this.$t("dialog.switchWallet.title"),
@@ -131,7 +127,6 @@ export default {
           }, 250);
         })
         .catch(() => {});
-       */
     },
     exit() {
       this.$gateway.confirmClose(this.$t("dialog.exit.message"));
