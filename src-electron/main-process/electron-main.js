@@ -54,7 +54,10 @@ function createWindow() {
     minWidth: 640,
     minHeight: 480,
     icon: require("path").join(__statics, "icon_512x512.png"),
-    title
+	title,
+	webPreferences: {
+		nodeIntegration: true
+        }
   });
 
   mainWindow.on("close", e => {
