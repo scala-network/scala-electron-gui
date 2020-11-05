@@ -18,8 +18,8 @@ Please submit any changes as pull requests to the development branch, all change
 ```
 nvm use 11.9.0
 npm install -g quasar-cli
-https://github.com/scala-network/scala-electron-gui/
-cd scala-electron-wallet
+git clone https://github.com/scala-network/scala-electron-gui/
+cd scala-electron-gui
 cp path_to_scala_binaries/scalad bin/
 cp path_to_scala_binaries/scala-wallet-rpc bin/
 npm install
