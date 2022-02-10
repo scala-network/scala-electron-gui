@@ -62,7 +62,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "sass-loader": "^7.1.0",
     "strip-ansi": "^3.0.1"
