@@ -22,7 +22,7 @@
     "ready": "npm run lint && npm run format"
   },
   "dependencies": {
-    "@quasar/app": "^2.0.8",
+    "@quasar/app": "^2.4.2",
     "@quasar/extras": "^1.9.4",
     "axios": "^0.21.1",
     "electron-is-dev": "^1.0.1",
@@ -62,7 +62,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.3",
     "prettier": "^1.19.1",
     "sass-loader": "^7.1.0",
     "strip-ansi": "^3.0.1"
