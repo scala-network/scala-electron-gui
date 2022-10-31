@@ -242,7 +242,7 @@ export class Backend {
 
         let path = null;
         if (params.type === "tx") {
-          path = "tx?tx_info=";
+          path = "tx.html?hash=";
         } else if (params.type === "service_node") {
           path = "service_node";
         }
