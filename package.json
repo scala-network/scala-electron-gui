@@ -22,7 +22,7 @@
     "ready": "npm run lint && npm run format"
   },
   "dependencies": {
-    "@quasar/app": "^2.0.8",
+    "@quasar/app": "^2.4.3",
     "@quasar/extras": "^1.9.4",
     "axios": "^0.21.1",
     "electron-is-dev": "^1.0.1",
