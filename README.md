@@ -1,3 +1,9 @@
+# :warning: Repository Archived :warning:
+
+**Note**: This repository has been archived. The new repository for the Scala Electron GUI wallet can be found at [Scala GUI](https://github.com/scala-network/scala-gui). Please refer to the new repository for the latest updates and developments.
+
+---
+
 # Scala Electron GUI Wallet
 
 ![Screenshot](https://i.imgur.com/Gou8OMu.jpg "Screenshot")
